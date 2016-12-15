@@ -186,4 +186,81 @@
 	
 	%Folha de aprovação
 	\imprimirfolhaaprovacao
+	
+	%Dedicatória
+	\begin{dedicatoria}
+		\vspace*{\fill}
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		\vspace*{\fill}
+	\end{dedicatoria}
+
+	\begin{agradecimentos}
+		Os agradecimentos...
+	\end{agradecimentos}
+
+	\begin{epigrafe}
+		\vspace*{\fill}
+		\begin{flushright}
+			\textit{``Frase''\\
+				(autor)}
+		\end{flushright}
+	\end{epigrafe}
+	
+	%Resumo em língua vernácula
+	\begin{resumo}
+		Resumo em português
+		\vspace{\onelineskip}
+		\\\noindent
+		\textbf{Palavras-chave}: palavras, chave.
+	\end{resumo}
+
+	%Resumo em língua estrangeira
+	\begin{resumo}[Abstract]
+		\begin{otherlanguage*}{english}
+			Abstract in English
+			\vspace{\onelineskip}
+			\\\noindent
+			\textbf{Keywords}: key, words.
+		\end{otherlanguage*}
+	\end{resumo}
+
+
+	%Lista de siglas e abreviaturas
+	\begin{siglas}
+		\item[ABC] Letras
+		\item[123] Números
+	\end{siglas}
+
+	%Lista de Figuras
+	\pdfbookmark[0]{\listfigurename}{lof}
+	\listoffigures*
+	\cleardoublepage
+	
+	%Lista de tabelas
+	\pdfbookmark[0]{\listtablename}{lot}
+	\listoftables*
+	\cleardoublepage
+	
+	%Sumário
+	\pdfbookmark[0]{\contentsname}{toc}
+	\tableofcontents*
+	\cleardoublepage
+	
+	\chapter{INTRODUÇÃO}
+		\section{Seção}
+		\section{Seção}
+		\section{Seção}
+	\chapter{Desenvolvimento}
+		\section{Seção}
+			\subsection{}
+		\section{Seção}
+		\section{Seção}
+	\chapter{Conclusão}
+	\section{Seção}
+	\subsection{}
+		\section{Seção}
+		\section{Seção}
+			\subsection{Subseção}
+				\subsubsection{Sub Sub Seção}
+	\chapter{Referências}
 \end{document}
