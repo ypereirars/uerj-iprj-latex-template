@@ -6,6 +6,74 @@
 
 \graphicspath{ {figures/} }
 
+
+\newcommand{\imprimircatalogacao}{%
+	\noindent
+	\ABNTEXchapterfont UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO\\
+	\ABNTEXchapterfont INSTITUTO POLITÉCNICO\\
+	\ABNTEXchapterfont CURSO DE ENGENHARIA DE COMPUTAÇÃO\\\\
+	
+	\noindent
+	Reitor: Ruy Garcia Marques\\
+	Vice-Reitor: Maria Georgina Muniz Washington\\
+	Diretor do Instituto Politécnico: Ricardo Carvalho de Barros\\
+	Coordenador de Curso: José Humberto Zani\\
+	
+	\noindent
+	Banca Avaliadora Composta por: \imprimirorientador~(Orientador)\\
+	Prof. Dr. Professor 1\\
+	Prof. Dr. Professor 2
+	
+	\begin{center}
+		CATALOGAÇÃO NA FONTE \\ UERJ/REDE SIRIUS/BIBLIOTECA CTC/E
+		\begin{tikzpicture}[remember picture, overlay]
+			\draw[line width = 1pt] ($(current page.north west) + (55mm, -111.5mm)$) rectangle ($(current page.south east) + (-35.5mm,80mm)$);
+		\end{tikzpicture}
+	\end{center}
+	
+	Endereço: UERJ - IPRJ \\
+			  Rua Bonfim, 25 - Prédio 5, Vila Amélia.\\
+			  CEP 28625-570 - Nova Friburgo - RJ - Brasil.\\
+
+	\noindent
+	Este trabalho nos termos da legislação que resguarda os direitos autorais é considerado de propriedade da Universidade do Estado do Rio de Janeiro (UERJ). É permitida a transcrição parcial de partes do trabalho, ou mencioná-lo, para comentários e citações, desde que sem propósitos comerciais e que seja feita a referência bibliográfica completa.
+	
+	\begin{flushright}
+		\assinatura{\imprimirautor}
+	\end{flushright}
+}
+
+\newcommand{\imprimirfolhaaprovacao}{%
+	\begin{folhadeaprovacao}
+		\begin{center}
+			{\ABNTEXchapterfont\large{\imprimirautor}}\\[1cm]
+			\vspace{2cm}
+			{\ABNTEXchapterfont\Large\bfseries\imprimirtitulo}
+		\end{center}		
+		\vspace{1cm}
+		\hspace{.45\textwidth}
+		\begin{minipage}{.5\textwidth}
+			\imprimirpreambulo
+		\end{minipage}%
+		\\\\\\\\
+		\vspace{1cm}
+		Aprovado em \imprimirdata.\\
+		\vspace{1.5cm}
+		Banca examinadora:
+		
+		\assinatura{\imprimirorientador\\Instituto Politécnico - UERJ}
+		\assinatura{Professor da banca 1\\Instituto Politécnico - UERJ}
+		\assinatura{Professor da banca 2\\Instituto Politécnico - UERJ}
+		\begin{center}
+			\vfill
+			{\large\imprimirlocal}
+			\par
+			{\large\the\year}
+		\end{center}
+		
+	\end{folhadeaprovacao}
+}
+
 \renewcommand{\imprimircapa}{%
 	\begin{tikzpicture}[remember picture, overlay]
 		\draw[line width = 4pt] ($(current page.north west) + (20mm, -20mm)$) rectangle ($(current page.south east) + (-10mm,10mm)$);
@@ -107,34 +175,15 @@
 \tipotrabalho{monografia}
 
 \begin{document}
+	%Capa
 	\imprimircapa
+	
+	%Folha de rosto
 	\imprimirfolhaderosto
 	
-	\begin{folhadeaprovacao}
-		\begin{center}
-			{\ABNTEXchapterfont\large{\imprimirautor}}\\[1cm]
-			\vspace{2cm}
-			{\ABNTEXchapterfont\Large\bfseries\imprimirtitulo}
-		\end{center}		
-		\vspace{1cm}
-		\hspace{.45\textwidth}
-		\begin{minipage}{.5\textwidth}
-			\imprimirpreambulo
-		\end{minipage}%
-	\\
-		\vspace{1cm}
-		Aprovado em \imprimirdata.\\
-		\vspace{1.5cm}
-		Banca examinadora:
-		\assinatura{\imprimirorientador\\Instituto Politécnico - UERJ}
-		\assinatura{Professor da banca 1\\Instituto Politécnico - UERJ}
-		\assinatura{Professor da banca 2\\Instituto Politécnico - UERJ}
-		\begin{center}
-			\vfill
-			{\large\imprimirlocal}
-			\par
-			{\large\imprimirdata}
-		\end{center}
-		
-	\end{folhadeaprovacao}
+	%Catalogação Biblioteca
+	\imprimircatalogacao
+	
+	%Folha de aprovação
+	\imprimirfolhaaprovacao
 \end{document}
