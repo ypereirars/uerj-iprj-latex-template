@@ -64,6 +64,16 @@
 \usepackage[alf,abnt-emphasize=bf]{abntex2cite}
 
 % Estilos
+\autor{Yuri Pereira Ribeiro Silveira} 	%Nome do autor
+% Especificidades para a entrada de autor pessoal: – sobrenome com indicativo de parentesco
+% Quando o autor é brasileiro, trate o grau de parentesco como parte do sobrenome.
+% Exemplo: Autor: Luís Fernando Carvalho Neto - Entrada: CARVALHO NETO, L. F.
+\newcommand{\entradaAutor}{SILVEIRA, Y. R} % Sem ponto no final
+% Titulo do trabalho
+\titulo{Utilização do Latex na elaboração de trabalhos de conclusão de curso} %Título do trabalho
+\newcommand{\englishTitle}{Preparation of Monographs with Latex}
+\data{\today}						%Ano de publicação
+\local{Nova Friburgo}					%Local
 %% Membros da banca
 \newcommand{\membrobancaA}{}
 \newcommand{\membrobancaB}{}
@@ -130,11 +140,11 @@
 \renewcommand{\ABNTEXchapterfontsize}{\normalsize}
 \renewcommand{\ABNTEXpartfont}{\fontseries{b}\selectfont\selectfont}
 \renewcommand{\ABNTEXpartfontsize}{\normalsize}
-\renewcommand{\ABNTEXsectionfont}{\normalfont\selectfont}
+\renewcommand{\ABNTEXsectionfont}{\normalfont\fontseries{b}\selectfont}
 \renewcommand{\ABNTEXsectionfontsize}{\normalsize}
 \renewcommand{\ABNTEXsubsectionfont}{\normalfont\fontseries{b}\selectfont}
 \renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
-\renewcommand{\ABNTEXsubsubsectionfont}{\normalfont\selectfont}
+\renewcommand{\ABNTEXsubsubsectionfont}{\normalfont\fontseries{b}\selectfont}
 \renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
 \renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont\itshape\selectfont}
 \renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
@@ -339,11 +349,6 @@
 	\end{center}
 }
 \makeatother
-
-\autor{Yuri Pereira Ribeiro Silveira} 	%Nome do autor
-\titulo{Título do Trabalho} 			%Título do trabalho
-\data{\today}						%Ano de publicação
-\local{Nova Friburgo}					%Local
 
 \preambulo{
 	Trabalho de conclusão de curso apresentado como pré-requisito para obtenção do título de Engenheiro de Computação, ao Departamento de Modelagem Computacional, do Instituto Politécnico, da Universidade do Estado do Rio de Janeiro.
