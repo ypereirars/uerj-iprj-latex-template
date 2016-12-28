@@ -1,6 +1,5 @@
 \documentclass[
     chapter=TITLE,
-    section=TITLE,
     12pt, % Tamanho da fonte
     openright, % Capítulos começam em pág. ímpar (insere página vazia caso preciso)
     oneside, % Para impressão somente verso. Oposto a impressão em verso e anverso
@@ -17,6 +16,9 @@
 \usetikzlibrary{calc}
 \usepackage{lipsum} % para geração de dummy text
 \usepackage{multirow}
+
+%% Redefine booleans
+%\setboolean{ABNTEXuppersubsection}{false}
 
 % Pacotes
 %% Sumário
@@ -140,14 +142,19 @@
 \renewcommand{\ABNTEXchapterfontsize}{\normalsize}
 \renewcommand{\ABNTEXpartfont}{\fontseries{b}\selectfont\selectfont}
 \renewcommand{\ABNTEXpartfontsize}{\normalsize}
-\renewcommand{\ABNTEXsectionfont}{\normalfont\fontseries{b}\selectfont}
+\renewcommand{\ABNTEXsectionfont}{\normalfont\selectfont} %\fontseries{b}
 \renewcommand{\ABNTEXsectionfontsize}{\normalsize}
-\renewcommand{\ABNTEXsubsectionfont}{\normalfont\fontseries{b}\selectfont}
+\renewcommand{\ABNTEXsubsectionfont}{\normalfont}
 \renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
-\renewcommand{\ABNTEXsubsubsectionfont}{\normalfont\fontseries{b}\selectfont}
+\renewcommand{\ABNTEXsubsubsectionfont}{\normalfont}
 \renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
-\renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont\itshape\selectfont}
+\renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont}
 \renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
+%\renewcommand{\ABNTEXsubsubsectionfont}{\normalfont\fontseries{b}\selectfont}
+%\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+%\renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont\itshape\selectfont}
+%\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
+
 
 
 %% Redefinição da formatação de Parágrafos 
@@ -155,26 +162,41 @@
 \setlength{\parskip}{0cm}
 
 %% Sumário
-\renewcommand*{\cftsectionfont}{\normalfont}
+\renewcommand{\cftchapterdotsepfont}{\normalfont\normalsize}
+\renewcommand*{\cftchapterfont}{\normalfont\fontseries{b}} %\fontseries{b}
+\renewcommand{\chapnumfont}{\normalfont\normalsize}
+\renewcommand*{\cftsectionfont}{\normalfont} %\fontseries{b}
+\renewcommand*{\cftsubsectionfont}{\normalfont}
 \renewcommand*{\cftsubsubsectionfont}{\normalfont}
-\renewcommand*{\cftparagraphfont}{\normalfont\itshape}
+\renewcommand*{\cftsubsubsubsectionfont}{\normalfont}
+\renewcommand*{\cftparagraphfont}{\normalfont} %\itshape
+
+%% Forca underline na secao terciaria
+\newcommand{\tmpsubsection}[1]{}
+\let\tmpsubsection=\subsection
+\renewcommand{\subsection}[1]{\tmpsubsection{\underline{#1}}}
+
+%% Forca underline na secao secundaroa
+\newcommand{\tmpsection}[1]{}
+\let\tmpsection=\section
+\renewcommand{\section}[1]{\tmpsection{\textbf{#1}}}
 
 %% Tornar as seções secundários com fonte em maiúscula
-\makeatletter
-\let\oldcontentsline\contentsline
-\def\contentsline#1#2{%
-  \expandafter\ifx\csname l@#1\endcsname\l@section
-    \expandafter\@firstoftwo
-  \else
-    \expandafter\@secondoftwo
-  \fi
-  {%
-    \oldcontentsline{#1}{\MakeTextUppercase{#2}}%
-  }{%
-    \oldcontentsline{#1}{#2}%
-  }%
-}
-\makeatother
+%\makeatletter
+%\let\oldcontentsline\contentsline
+%\def\contentsline#1#2{%
+%  \expandafter\ifx\csname l@#1\endcsname\l@section
+%    \expandafter\@firstoftwo
+%  \else
+%    \expandafter\@secondoftwo
+%  \fi
+%  {%
+%    \oldcontentsline{#1}{\MakeTextUppercase{#2}}%
+%  }{%
+%    \oldcontentsline{#1}{#2}%
+%  }%
+%}
+%\makeatother
 
 %% Tornar a entrada "Referências" com fonte em maiúscula
 %%\addto\captionsbrazil{
