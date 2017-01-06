@@ -1,20 +1,18 @@
 \documentclass[
     chapter=TITLE,
-    12pt, % Tamanho da fonte
-    openright, % Capítulos começam em pág. ímpar (insere página vazia caso preciso)
-    oneside, % Para impressão somente verso. Oposto a impressão em verso e anverso
-    a4paper, % Tamanho do papel
-    english, % Idioma adicional para hifenização
-    french, % Idioma adicional para hifenização
-    spanish, % Idioma adicional para hifenização
-    brazil % o último idioma é o principal do documento
+    12pt, 		% Tamanho da fonte
+    openright, 	% Capítulos começam em pág. ímpar (insere página vazia caso preciso)
+    oneside, 	% Para impressão somente verso. Oposto a impressão em verso e anverso
+    a4paper, 	% Tamanho do papel
+    english, 	% Idioma adicional para hifenização
+    brazil 		% o último idioma é o principal do documento
     ]{abntex2}
     
 \usepackage[utf8]{inputenc}
 \usepackage{tikz}
 \usepackage{wrapfig}
 \usetikzlibrary{calc}
-\usepackage{lipsum} % para geração de dummy text
+\usepackage{lipsum} 	% para geração de dummy text
 \usepackage{multirow}
 
 %% Redefine booleans
@@ -25,29 +23,50 @@
 \usepackage{tocloft}
 
 %% Codificação
-\usepackage[T1]{fontenc} % Codificação de saída
+\usepackage[T1]{fontenc} 	% Codificação de saída
 
 %% Fonte
-\usepackage{times} % Times New Roman
-\renewcommand{\familydefault}{\sfdefault} % Seta fonte default
+\usepackage{times} 			% Times New Roman
+\renewcommand
+	{\familydefault}
+	{\sfdefault} 			% Seta fonte default
 
-\usepackage{lastpage} % Usado pela Ficha catalográfica
-\usepackage{indentfirst} % Indenta o primeiro parágrafo de cada seção.
-\usepackage{color} % Controle das cores
-\usepackage{microtype} % Para melhorias de justificação
-\usepackage{lscape} % Permite a criação de conteúdo em modo paisagem
-\usepackage{hyperref} % Criação de links
+\usepackage{lastpage} 		% Usado pela Ficha catalográfica
+\usepackage{indentfirst} 	% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color} 			% Controle das cores
+\usepackage{microtype} 		% Para melhorias de justificação
+\usepackage{lscape} 		% Permite a criação de conteúdo em modo paisagem
+\usepackage{hyperref} 		% Criação de links
 \usepackage{etoolbox}
 
 %% Cabeçalho padrao
-\makepagestyle{abntheadings}
-\makeevenhead{abntheadings}{\ABNTEXfontereduzida\thepage}{}{\ABNTEXfontereduzida\textit\leftmark}
-\makeoddhead{abntheadings}{}{}{\ABNTEXfontereduzida\thepage}
-\makeheadrule{abntheadings}{0pt}{\normalrulethickness}
+\makepagestyle
+	{abntheadings}
+\makeevenhead
+	{abntheadings}
+	{\ABNTEXfontereduzida\thepage}
+	{}
+	{\ABNTEXfontereduzida\textit\leftmark}
+\makeoddhead
+	{abntheadings}
+	{}
+	{}
+	{\ABNTEXfontereduzida\thepage}
+\makeheadrule
+	{abntheadings}
+	{0pt}
+	{\normalrulethickness}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %% Cabeçalho do inicio do capitulo
-\makepagestyle{abntchapfirst}
-\makeoddhead{abntchapfirst}{}{}{\ABNTEXfontereduzida\thepage}
+\makepagestyle
+	{abntchapfirst}
+\makeoddhead
+	{abntchapfirst}
+	{}
+	{}
+	{\ABNTEXfontereduzida\thepage}
 
 %% Tabelas
 \usepackage{multirow}
@@ -59,42 +78,94 @@
 \usepackage{graphicx} % Inclusão de gráficos
 
 %% Tamanho e alinhamento das legendas
-\usepackage[singlelinecheck=false,justification=justified,font=footnotesize]{caption}
+\usepackage[
+	singlelinecheck=false,
+	justification=justified,
+	font=footnotesize
+	]
+	{caption}
 
 %% Citações
 \usepackage[hyphenbreaks]{breakurl}
 \usepackage[alf,abnt-emphasize=bf]{abntex2cite}
 
 % Estilos
-\autor{Yuri Pereira Ribeiro Silveira} 	%Nome do autor
+\autor{Nome SegundoNnome Sobrenome} 	%Nome do autor
 % Especificidades para a entrada de autor pessoal: – sobrenome com indicativo de parentesco
 % Quando o autor é brasileiro, trate o grau de parentesco como parte do sobrenome.
-% Exemplo: Autor: Luís Fernando Carvalho Neto - Entrada: CARVALHO NETO, L. F.
-\newcommand{\entradaAutor}{SILVEIRA, Y. R} % Sem ponto no final
+\newcommand{\entradaAutor}{SOBRENOME, N. S} % Sem ponto no final
 % Titulo do trabalho
 \titulo{Utilização do Latex na elaboração de trabalhos de conclusão de curso} %Título do trabalho
 \newcommand{\englishTitle}{Preparation of Monographs with Latex}
-\data{\today}						%Ano de publicação
-\local{Nova Friburgo}					%Local
+\data{\today}			%Ano de publicação
+\local{Nova Friburgo}	%Local
 %% Membros da banca
 \newcommand{\membrobancaA}{}
 \newcommand{\membrobancaB}{}
 \newcommand{\membrobancaC}{}
 
-\providecommand{\imprimirmembrobancaA}{}
-\providecommand{\imprimirmembrobancaAinst}{}
-\renewcommand{\membrobancaA}[2][\imprimirinstituicao]{\renewcommand{\imprimirmembrobancaA}{#2}\renewcommand{\imprimirmembrobancaAinst}{#1}}
+\providecommand
+	{\imprimirmembrobancaA}
+	{}
+\providecommand
+	{\imprimirmembrobancaAinst}
+	{}
+\renewcommand
+	{\membrobancaA}
+	[2]
+	[\imprimirinstituicao]
+	{\renewcommand
+		{\imprimirmembrobancaA}
+		{#2}
+		\renewcommand
+			{\imprimirmembrobancaAinst}
+			{#1}
+	}
 
-\providecommand{\imprimirmembrobancaB}{}
-\providecommand{\imprimirmembrobancaBinst}{}
-\renewcommand{\membrobancaB}[2][\imprimirinstituicao]{\renewcommand{\imprimirmembrobancaB}{#2}\renewcommand{\imprimirmembrobancaBinst}{#1}}
+\providecommand
+	{\imprimirmembrobancaB}
+	{}
+\providecommand
+	{\imprimirmembrobancaBinst}
+	{}
+\renewcommand
+	{\membrobancaB}
+	[2]
+	[\imprimirinstituicao]
+	{
+		\renewcommand
+			{\imprimirmembrobancaB}
+			{#2}
+			\renewcommand
+				{\imprimirmembrobancaBinst}
+				{#1}
+	}
 
-\providecommand{\imprimirmembrobancaC}{}
-\providecommand{\imprimirmembrobancaCinst}{}
-\renewcommand{\membrobancaC}[2][\imprimirinstituicao]{\renewcommand{\imprimirmembrobancaC}{#2}\renewcommand{\imprimirmembrobancaCinst}{#1}}
+\providecommand
+	{\imprimirmembrobancaC}
+	{}
+\providecommand
+	{\imprimirmembrobancaCinst}
+	{}
+\renewcommand
+	{\membrobancaC}
+	[2]
+	[\imprimirinstituicao]
+	{
+		\renewcommand
+			{\imprimirmembrobancaC}
+			{#2}
+			\renewcommand
+				{\imprimirmembrobancaCinst}
+				{#1}
+	}
 
-\newcommand{\imprimirmeOrientadorinst}{\imprimirinstituicao}
-\newcommand{\imprimirmeCoorientadorinst}{\imprimirinstituicao}
+\newcommand
+	{\imprimirmeOrientadorinst}
+	{\imprimirinstituicao}
+\newcommand
+	{\imprimirmeCoorientadorinst}
+	{\imprimirinstituicao}
 
 %% Natureza do trabalho
 \providecommand{\imprimirnaturezatrabalho}{}
@@ -109,16 +180,14 @@
   
 %% Redefinir dedicatória
 \renewenvironment{dedicatoria}[1][]
-{
-        \ifthenelse{\equal{#1}{}}{
-                \PRIVATEbookmarkthis{\dedicatorianame}
-        }{\preamblealchapter{#1}}
-
-        \vspace*{\fill}
-}
-{
-
-}
+	{
+	     \ifthenelse{\equal{#1}{}}{
+	             \PRIVATEbookmarkthis{\dedicatorianame}
+	     }{\preamblealchapter{#1}}
+	
+	     \vspace*{\fill}
+	}
+	{}
 
 \renewenvironment{epigrafe}[1][]
 {
@@ -162,7 +231,7 @@
 \setlength{\parskip}{0cm}
 
 %% Sumário
-\renewcommand{\cftchapterdotsepfont}{\normalfont\normalsize}
+%\renewcommand{\cftchapterdotsepfont}{\normalfont\normalsize}
 \renewcommand*{\cftchapterfont}{\normalfont\fontseries{b}} %\fontseries{b}
 \renewcommand{\chapnumfont}{\normalfont\normalsize}
 \renewcommand*{\cftsectionfont}{\normalfont} %\fontseries{b}
