@@ -1,0 +1,32 @@
+\newcommand{\imprimirfolhaaprovacao}{%
+	\begin{folhadeaprovacao}
+		\begin{center}
+			{\large{\imprimirautor}}\\[1cm]
+			\vspace{2cm}
+			{\Large\bfseries\imprimirtitulo}
+		\end{center}		
+		\vspace{1cm}
+		\hspace{.45\textwidth}
+		\begin{minipage}{.5\textwidth}
+			\imprimirpreambulo
+		\end{minipage}%
+		\\\\\\\\
+		\vspace{1cm}
+		Aprovado em \imprimirdata.\\
+		\vspace{1.5cm}
+		Banca examinadora:
+		
+		\assinatura{\imprimirorientador\\Instituto Politécnico - UERJ}
+		\assinatura{Professor da banca 1\\Instituto Politécnico - UERJ}
+		\assinatura{Professor da banca 2\\Instituto Politécnico - UERJ}
+		\begin{center}
+			\vfill
+			{\large\imprimirlocal}
+			\par
+			{\large\the\year}
+		\end{center}
+		
+	\end{folhadeaprovacao}
+}
+
+\imprimirfolhaaprovacao

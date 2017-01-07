@@ -1,0 +1,37 @@
+\renewcommand{\imprimircapa}{%
+	\begin{tikzpicture}[remember picture, overlay]
+		\draw[line width = 4pt] ($(current page.north west) + (20mm, -20mm)$) rectangle ($(current page.south east) + (-10mm,10mm)$);
+		\draw[line width = 1pt] ($(current page.north west) + (21mm,-21mm)$) rectangle ($(current page.south east) + (-11.5mm,11.5mm)$);
+	\end{tikzpicture}
+	\begin{capa}
+		\begin{minipage}[r]{0.1\linewidth}
+			\includegraphics[width=1.5\linewidth]{uerj} 
+		\end{minipage}%
+		\begin{minipage}[c]{0.7\linewidth}
+			\begin{center}
+				\textbf{UNIVERSIDADE DO ESTADO DO \\ RIO DE JANEIRO}\\
+				\noindent\rule{7cm}{0.4pt}\\
+				\textbf{INSTITUTO POLITÉCNICO \\ GRADUAÇÃO EM ENGENHARIA \\DE COMPUTAÇÃO}\\
+			\end{center}
+		\end{minipage}%
+		\begin{minipage}[c]{0.1\linewidth}
+			\includegraphics[width=1.5\linewidth]{iprj} 
+		\end{minipage}
+		
+		\vspace*{4.5cm}
+		\center
+		\textbf{\large\imprimirautor}
+		\vspace*{3cm}
+		\begin{center}
+			\bfseries\LARGE\imprimirtitulo
+		\end{center}
+		\vfill
+		\textbf{
+			\large\imprimirlocal
+			\\	
+			\large \the\year
+		}
+		\vspace*{1cm}
+	\end{capa}
+}
+\imprimircapa
