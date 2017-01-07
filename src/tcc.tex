@@ -1,7 +1,7 @@
 \documentclass[
     chapter=TITLE,
     12pt, 		% Tamanho da fonte
-    openright, 	% Capítulos começam em pág. ímpar (insere página vazia caso preciso)
+    openright,% Capítulos começam em pág. ímpar (insere página vazia caso preciso)
     oneside, 	% Para impressão somente verso. Oposto a impressão em verso e anverso
     a4paper, 	% Tamanho do papel
     english, 	% Idioma adicional para hifenização
@@ -15,9 +15,6 @@
 \usepackage{lipsum} 	% para geração de dummy text
 \usepackage{multirow}
 
-%% Redefine booleans
-%\setboolean{ABNTEXuppersubsection}{false}
-
 % Pacotes
 %% Sumário
 \usepackage{tocloft}
@@ -27,46 +24,14 @@
 
 %% Fonte
 \usepackage{times} 			% Times New Roman
-\renewcommand
-	{\familydefault}
-	{\sfdefault} 			% Seta fonte default
 
 \usepackage{lastpage} 		% Usado pela Ficha catalográfica
 \usepackage{indentfirst} 	% Indenta o primeiro parágrafo de cada seção.
-\usepackage{color} 			% Controle das cores
+\usepackage{color} 				% Controle das cores
 \usepackage{microtype} 		% Para melhorias de justificação
-\usepackage{lscape} 		% Permite a criação de conteúdo em modo paisagem
+\usepackage{lscape} 			% Permite a criação de conteúdo em modo paisagem
 \usepackage{hyperref} 		% Criação de links
 \usepackage{etoolbox}
-
-%% Cabeçalho padrao
-\makepagestyle
-	{abntheadings}
-\makeevenhead
-	{abntheadings}
-	{\ABNTEXfontereduzida\thepage}
-	{}
-	{\ABNTEXfontereduzida\textit\leftmark}
-\makeoddhead
-	{abntheadings}
-	{}
-	{}
-	{\ABNTEXfontereduzida\thepage}
-\makeheadrule
-	{abntheadings}
-	{0pt}
-	{\normalrulethickness}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%% Cabeçalho do inicio do capitulo
-\makepagestyle
-	{abntchapfirst}
-\makeoddhead
-	{abntchapfirst}
-	{}
-	{}
-	{\ABNTEXfontereduzida\thepage}
 
 %% Tabelas
 \usepackage{multirow}
@@ -89,206 +54,7 @@
 \usepackage[hyphenbreaks]{breakurl}
 \usepackage[alf,abnt-emphasize=bf]{abntex2cite}
 
-% Estilos
-\autor{Nome SegundoNnome Sobrenome} 	%Nome do autor
-% Especificidades para a entrada de autor pessoal: – sobrenome com indicativo de parentesco
-% Quando o autor é brasileiro, trate o grau de parentesco como parte do sobrenome.
-\newcommand{\entradaAutor}{SOBRENOME, N. S} % Sem ponto no final
-% Titulo do trabalho
-\titulo{Utilização do Latex na elaboração de trabalhos de conclusão de curso} %Título do trabalho
-\newcommand{\englishTitle}{Preparation of Monographs with Latex}
-\data{\today}			%Ano de publicação
-\local{Nova Friburgo}	%Local
-%% Membros da banca
-\newcommand{\membrobancaA}{}
-\newcommand{\membrobancaB}{}
-\newcommand{\membrobancaC}{}
-
-\providecommand
-	{\imprimirmembrobancaA}
-	{}
-\providecommand
-	{\imprimirmembrobancaAinst}
-	{}
-\renewcommand
-	{\membrobancaA}
-	[2]
-	[\imprimirinstituicao]
-	{\renewcommand
-		{\imprimirmembrobancaA}
-		{#2}
-		\renewcommand
-			{\imprimirmembrobancaAinst}
-			{#1}
-	}
-
-\providecommand
-	{\imprimirmembrobancaB}
-	{}
-\providecommand
-	{\imprimirmembrobancaBinst}
-	{}
-\renewcommand
-	{\membrobancaB}
-	[2]
-	[\imprimirinstituicao]
-	{
-		\renewcommand
-			{\imprimirmembrobancaB}
-			{#2}
-			\renewcommand
-				{\imprimirmembrobancaBinst}
-				{#1}
-	}
-
-\providecommand
-	{\imprimirmembrobancaC}
-	{}
-\providecommand
-	{\imprimirmembrobancaCinst}
-	{}
-\renewcommand
-	{\membrobancaC}
-	[2]
-	[\imprimirinstituicao]
-	{
-		\renewcommand
-			{\imprimirmembrobancaC}
-			{#2}
-			\renewcommand
-				{\imprimirmembrobancaCinst}
-				{#1}
-	}
-
-\newcommand
-	{\imprimirmeOrientadorinst}
-	{\imprimirinstituicao}
-\newcommand
-	{\imprimirmeCoorientadorinst}
-	{\imprimirinstituicao}
-
-%% Natureza do trabalho
-\providecommand{\imprimirnaturezatrabalho}{}
-\newcommand{\naturezatrabalho}[1]{
-    \renewcommand{\imprimirnaturezatrabalho}{#1}
-}
-
-%% Redefinir resumo
-\renewenvironment{resumo}[1][\resumoname]{%
-   \pretextualchapter{#1}
-  }{\PRIVATEclearpageifneeded}
-  
-%% Redefinir dedicatória
-\renewenvironment{dedicatoria}[1][]
-	{
-	     \ifthenelse{\equal{#1}{}}{
-	             \PRIVATEbookmarkthis{\dedicatorianame}
-	     }{\preamblealchapter{#1}}
-	
-	     \vspace*{\fill}
-	}
-	{}
-
-\renewenvironment{epigrafe}[1][]
-{
-        \ifthenelse{\equal{#1}{}}{
-                \PRIVATEbookmarkthis{\epigraphname}
-        }{\pretextualchapter{#1}}
-
-        \vspace*{\fill}
-}
-{
-
-}
-
-%% Comando para inserir sigla
-\newcommand{\sigla}[2][]{
-    \item[#1] \textit{#2}
-}
-
-%% Redefinição da formatação do \chapter
-\renewcommand{\ABNTEXchapterfont}{\normalfont\fontseries{b}\selectfont}
-\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
-\renewcommand{\ABNTEXpartfont}{\fontseries{b}\selectfont\selectfont}
-\renewcommand{\ABNTEXpartfontsize}{\normalsize}
-\renewcommand{\ABNTEXsectionfont}{\normalfont\selectfont} %\fontseries{b}
-\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
-\renewcommand{\ABNTEXsubsectionfont}{\normalfont}
-\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
-\renewcommand{\ABNTEXsubsubsectionfont}{\normalfont}
-\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
-\renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont}
-\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
-%\renewcommand{\ABNTEXsubsubsectionfont}{\normalfont\fontseries{b}\selectfont}
-%\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
-%\renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont\itshape\selectfont}
-%\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
-
-
-
-%% Redefinição da formatação de Parágrafos 
-\setlength{\parindent}{1.3cm}
-\setlength{\parskip}{0cm}
-
-%% Sumário
-%\renewcommand{\cftchapterdotsepfont}{\normalfont\normalsize}
-\renewcommand*{\cftchapterfont}{\normalfont\fontseries{b}} %\fontseries{b}
-\renewcommand{\chapnumfont}{\normalfont\normalsize}
-\renewcommand*{\cftsectionfont}{\normalfont} %\fontseries{b}
-\renewcommand*{\cftsubsectionfont}{\normalfont}
-\renewcommand*{\cftsubsubsectionfont}{\normalfont}
-\renewcommand*{\cftsubsubsubsectionfont}{\normalfont}
-\renewcommand*{\cftparagraphfont}{\normalfont} %\itshape
-
-%% Forca underline na secao terciaria
-\newcommand{\tmpsubsection}[1]{}
-\let\tmpsubsection=\subsection
-\renewcommand{\subsection}[1]{\tmpsubsection{\underline{#1}}}
-
-%% Forca underline na secao secundaroa
-\newcommand{\tmpsection}[1]{}
-\let\tmpsection=\section
-\renewcommand{\section}[1]{\tmpsection{\textbf{#1}}}
-
-%% Tornar as seções secundários com fonte em maiúscula
-%\makeatletter
-%\let\oldcontentsline\contentsline
-%\def\contentsline#1#2{%
-%  \expandafter\ifx\csname l@#1\endcsname\l@section
-%    \expandafter\@firstoftwo
-%  \else
-%    \expandafter\@secondoftwo
-%  \fi
-%  {%
-%    \oldcontentsline{#1}{\MakeTextUppercase{#2}}%
-%  }{%
-%    \oldcontentsline{#1}{#2}%
-%  }%
-%}
-%\makeatother
-
-%% Tornar a entrada "Referências" com fonte em maiúscula
-%%\addto\captionsbrazil{
-%%    \renewcommand{\bibname}{REFER\^ENCIAS}
-%%}
-
-% Legendas
-\makeatletter
-\patchcmd{\caption@@@make}
-  {\ifcaption@star}
-    {\ifcaption@star\small}
-    {}{}
-\makeatother
-
-
-\graphicspath{ {figures/} }
-
-
-\preambulo{
-	Trabalho de conclusão de curso apresentado como pré-requisito para obtenção do título de Engenheiro de Computação, ao Departamento de Modelagem Computacional, do Instituto Politécnico, da Universidade do Estado do Rio de Janeiro.
-}
-\orientador{Nome do Orientador}
-\tipotrabalho{monografia}
+\include{config}		%Define as configurações do arquivo
 
 \begin{document}
 	%Capa
