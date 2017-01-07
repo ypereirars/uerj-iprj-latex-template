@@ -1,51 +1,53 @@
 \makeatletter
 \renewcommand{\folhaderostocontent}{
-	\begin{tikzpicture}[remember picture, overlay]
-	\draw[line width = 4pt] ($(current page.north west) + (20mm, -20mm)$) rectangle ($(current page.south east) + (-10mm,10mm)$);
-	\draw[line width = 1pt] ($(current page.north west) + (21.5mm,-21.5mm)$) rectangle ($(current page.south east) + (-11.5mm,11.5mm)$);
-	\end{tikzpicture}
-	
-	\begin{minipage}[r]{0.1\linewidth}
-		\includegraphics[width=1.5\linewidth]{uerj} 
-	\end{minipage}%
-	\begin{minipage}[c]{0.7\linewidth}
-		\begin{center}
-			\textbf{UNIVERSIDADE DO ESTADO DO \\ RIO DE JANEIRO}\\
-			\noindent\rule{7cm}{0.4pt}\\
-			\textbf{INSTITUTO POLITÉCNICO \\ GRADUAÇÃO EM ENGENHARIA \\DE COMPUTAÇÃO}\\
-		\end{center}
-	\end{minipage}%
-	\begin{minipage}[c]{0.1\linewidth}
-		\includegraphics[width=1.5\linewidth]{iprj} 
-	\end{minipage}
-	\vspace*{2cm}
 	\begin{center}
-		{\large\imprimirautor}
-		\vspace*{\fill}\vspace*{\fill}
+		\begin{tikzpicture}[remember picture, overlay]
+		\draw[line width = 4pt] ($(current page.north west) + (20mm, -20mm)$) rectangle ($(current page.south east) + (-10mm,10mm)$);
+		\draw[line width = 1pt] ($(current page.north west) + (21.5mm,-21.5mm)$) rectangle ($(current page.south east) + (-11.5mm,11.5mm)$);
+		\end{tikzpicture}
+		
+		\begin{minipage}[r]{0.1\linewidth}
+			\includegraphics[width=1.5\linewidth]{uerj} 
+		\end{minipage}%
+		\begin{minipage}[c]{0.7\linewidth}
+			\begin{center}
+				\textbf{UNIVERSIDADE DO ESTADO DO \\ RIO DE JANEIRO}\\
+				\noindent\rule{7cm}{0.4pt}\\
+				\textbf{INSTITUTO POLITÉCNICO \\ GRADUAÇÃO EM ENGENHARIA \\DE COMPUTAÇÃO}\\
+			\end{center}
+		\end{minipage}%
+		\begin{minipage}[c]{0.1\linewidth}
+			\includegraphics[width=1.5\linewidth]{iprj} 
+		\end{minipage}
+		\vspace*{2cm}
 		\begin{center}
-			\bfseries\Large\imprimirtitulo
-		\end{center}
-		\vspace*{\fill}
-		\abntex@ifnotempty{\imprimirpreambulo}{%
-			\hspace{.45\textwidth}
-			\begin{minipage}{.5\textwidth}
-				\SingleSpacing
-				\imprimirpreambulo
-			\end{minipage}%
-			\vspace*{2cm}
+			{\large\imprimirautor}
+			\vspace*{\fill}\vspace*{\fill}
+			\begin{center}
+				\bfseries\Large\imprimirtitulo
+			\end{center}
 			\vspace*{\fill}
-		}%
-		{\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao
-				\vspace*{\fill}}}
-		{\large\imprimirorientadorRotulo~\imprimirorientador\par}
-		\abntex@ifnotempty{\imprimircoorientador}{%
-			{\large\imprimircoorientadorRotulo~\imprimircoorientador}%
-		}%
-		\vspace*{\fill}
-		{\large\imprimirlocal}
-		\par
-		{\large\the\year}
-		\vspace*{1cm}
+			\abntex@ifnotempty{\imprimirpreambulo}{%
+				\hspace{.45\textwidth}
+				\begin{minipage}{.5\textwidth}
+					\SingleSpacing
+					\imprimirpreambulo
+				\end{minipage}%
+				\vspace*{2cm}
+				\vspace*{\fill}
+			}%
+			{\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao
+					\vspace*{\fill}}}
+			{\large\imprimirorientadorRotulo~\imprimirorientador\par}
+			\abntex@ifnotempty{\imprimircoorientador}{%
+				{\large\imprimircoorientadorRotulo~\imprimircoorientador}%
+			}%
+			\vspace*{\fill}
+			{\large\imprimirlocal}
+			\par
+			{\large\the\year}
+			\vspace*{1cm}
+		\end{center}	
 	\end{center}
 }
 \makeatother
