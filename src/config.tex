@@ -175,7 +175,10 @@
 \setlength{\parskip}{0cm}
 
 %% Sumário
-%\renewcommand{\cftchapterdotsepfont}{\normalfont\normalsize}
+\makeatletter
+\addtocontents{toc}{%
+	\protect\renewcommand{\protect\cftchapterleader}{%-- switch it on here
+		\normalsize\normalfont\protect\cftdotfill{\protect\cftdotsep}}}
 \renewcommand*{\cftchapterfont}{\normalfont\fontseries{b}} %\fontseries{b}
 \renewcommand{\chapnumfont}{\normalfont\normalsize}
 \renewcommand*{\cftsectionfont}{\normalfont} %\fontseries{b}
@@ -193,7 +196,7 @@
 \newcommand{\tmpsection}[1]{}
 \let\tmpsection=\section
 \renewcommand{\section}[1]{\tmpsection{\textbf{#1}}}
-
+\makeatother
 %% Tornar as seções secundários com fonte em maiúscula
 %\makeatletter
 %\let\oldcontentsline\contentsline
