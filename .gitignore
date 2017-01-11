@@ -211,3 +211,4 @@ TSWLatexianTemp*
 
 # expex forward references with \gathertags
 *-tags.tex
+src/tcc.tps
